@@ -25,7 +25,8 @@ namespace MetroApp
         }
         public void VypisPrvni()
         {
-            Console.WriteLine(_nazvyStanice[0]);
+            Console.WriteLine($"Prní stanice: {_nazvyStanice[0]}");
+            Console.WriteLine($"Konečná stanice: {_nazvyStanice[_nazvyStanice.Count - 1]}");
         }
         public int ZjistiCas(string prvniStanice, string druhaStanice)
         {
@@ -44,6 +45,7 @@ namespace MetroApp
                     int indexDruhe = _nazvyStanice.IndexOf(druhaStanice);
                     int rozdíl = indexPrvni - indexDruhe;
                     cas = rozdíl * 2;
+                    cas = Math.Abs(cas);
                 }
             }
             return cas;
